@@ -19,6 +19,13 @@
                 <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
 
+            <div class="mt-4" style="display: flex; flex-direction: row;">
+                <x-jet-label for="client" value="{{ __('Client') }}" />
+                <x-jet-input id="client" class="block mt-1 mr-2" type="radio" name="type" value="0"/>
+                <x-jet-label for="store" value="{{ __('Store') }}" />
+                <x-jet-input id="store" class="block mt-1" type="radio" name="type" value="1"/>
+            </div>
+
             <div class="mt-4">
                 <x-jet-label for="password" value="{{ __('Password') }}" />
                 <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />

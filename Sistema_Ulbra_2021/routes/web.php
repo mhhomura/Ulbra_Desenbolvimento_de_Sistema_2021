@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmpresaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+Route::middleware(['auth:sanctum', 'verified', 'verify_cia'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::middleware(['auth', 'verify_cia'])->get('/payments', function () {
+    return view('paypal.paypal');
+})->name('payments');
+
+Route::group(['prefix' => 'cia'], function () {
+    Route::get('complete/registrantion', [EmpresaController::class, 'create'])->name('complete_registration')->middleware('auth'); /* Rota para completar o registro da empresa */
+    Route::post('complete/registrantion', [EmpresaController::class, 'store'])->name('complete_registration')->middleware('auth'); /* Rota para completar o registro da empresa */
+});
