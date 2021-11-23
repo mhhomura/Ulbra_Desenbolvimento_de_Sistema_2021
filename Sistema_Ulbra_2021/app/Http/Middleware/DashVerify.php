@@ -19,7 +19,10 @@ class DashVerify
     {
         if(Auth::user()->type === 1){
             return view('dashboard_company');
-        }else{
+        }elseif(Auth::user()->type === 3){
+            return view('dashboard_adm');
+        }
+        else{
             return view('dashboard');
         }
        

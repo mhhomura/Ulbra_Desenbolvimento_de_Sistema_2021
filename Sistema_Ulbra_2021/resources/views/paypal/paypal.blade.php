@@ -17,7 +17,7 @@
     </div>
 </x-app-layout>
 
-<script src="https://www.paypal.com/sdk/js?client-id=AXEbgdKZmpVg-zKonymgY6A3fSwqr10JIrQMoysFORaPIlJrBTqjy2d0iiDhbaGuuXU4T6tQ89Ngy3Of&vault=true&currency=BRL">
+<script src="https://www.paypal.com/sdk/js?client-id=AXEbgdKZmpVg-zKonymgY6A3fSwqr10JIrQMoysFORaPIlJrBTqjy2d0iiDhbaGuuXU4T6tQ89Ngy3Of">
 </script>
 <script>
     paypal.Buttons({
